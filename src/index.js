@@ -17,10 +17,23 @@ import ReactDOM from 'react-dom';
 // serviceWorker.unregister();
 
 
-const element = (
-  <h1>Hello</h1>
-)
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-)
+// const element = (
+//   <h1>Hello</h1>
+// )
+// ReactDOM.render(
+//   element,
+//   document.getElementById('root')
+// )
+
+// 更新已经渲染的元素
+
+function tick () {
+  const element = (
+    <div>
+      <h1>hello word</h1>
+      <h2>It is { new Date().toLocaleTimeString() }</h2>
+    </div>
+  )
+  ReactDOM.render(element, document.getElementById('root'))
+}
+setInterval(tick, 1000)
