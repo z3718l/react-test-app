@@ -2,6 +2,7 @@
 import React from 'react'
 import Home from './home.jsx'
 import MyNav from './myNav.jsx'
+import ComponentLife from './compnentLife.jsx'
 
 import StateComponent from './stateComponent.jsx'
 class App extends React.Component{
@@ -17,6 +18,7 @@ class App extends React.Component{
                 <MyNav nav = { nav1 } title="导航1"/>
                 <MyNav nav = { nav2 } title="导航2"/>
                 <StateComponent/>
+                <ComponentLife/>
             </div>
         )
     }
