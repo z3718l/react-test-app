@@ -1,8 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import App from './app.jsx';
 // import './index.css';
 // import App from './App';
 // // import * as serviceWorker from './serviceWorker';
+
+ReactDOM.render(
+  <App/>, document.getElementById('root')
+)
+
+
 
 // ReactDOM.render(
 //   <React.StrictMode>
@@ -27,13 +34,13 @@ import ReactDOM from 'react-dom';
 
 // 更新已经渲染的元素
 
-function tick () {
-  const element = (
-    <div>
-      <h1>hello word</h1>
-      <h2>It is { new Date().toLocaleTimeString() }</h2>
-    </div>
-  )
-  ReactDOM.render(element, document.getElementById('root'))
-}
-setInterval(tick, 1000)
+// function tick () {
+//   const element = (
+//     <div>
+//       <h1>hello word</h1>
+//       <h2>It is { new Date().toLocaleTimeString() }</h2>
+//     </div>
+//   )
+//   ReactDOM.render(element, document.getElementById('root'))
+// }
+// setInterval(tick, 1000)
