@@ -31,16 +31,21 @@ export default class ComponentLife extends React.Component{
         console.log('componentWillUnmount', '==组件卸载之前执行')
     }
     changeHandler = () => {
-        this.setState({
-            countNum: this.state.countNum += 2
-        })
+        // this.setState({
+        //     countNum: this.state.countNum += 2
+        // })
+    }
+    clickHandler = () => {
+        this.props.clickHandlers('我是子组件传出来的数据')
     }
     render() {
         return (
             <div>
                 <h1>生命周期函数</h1>
                 <p>{ this.state.countNum }</p>
+                <p>{ this.props.titleText }</p>
                 <button onClick = { this.changeHandler }>修改</button>
+                <button onClick={this.clickHandler}>修改文本</button>
             </div>
         )
     }

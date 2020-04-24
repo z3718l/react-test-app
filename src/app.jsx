@@ -6,6 +6,18 @@ import ComponentLife from './compnentLife.jsx'
 
 import StateComponent from './stateComponent.jsx'
 class App extends React.Component{
+    constructor() {
+        super()
+        this.state = {
+            titleText: '文本1'
+        }
+    }
+    clickHandler = (data) => {
+        this.setState({
+            // titleText: '文本2'
+            titleText: data
+        })
+    }
     // 渲染函数
     render() {
         // 在render函数中定义变量
@@ -18,7 +30,8 @@ class App extends React.Component{
                 <MyNav nav = { nav1 } title="导航1"/>
                 <MyNav nav = { nav2 } title="导航2"/>
                 <StateComponent/>
-                <ComponentLife/>
+                <ComponentLife titleText={ this.state.titleText } clickHandlers={this.clickHandler}/>
+                {/* <button onClick={this.clickHandler}>修改文本</button> */}
             </div>
         )
     }
