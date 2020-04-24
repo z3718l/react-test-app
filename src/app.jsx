@@ -12,8 +12,8 @@ class App extends React.Component{
             <div>
                 <h1>hello react</h1>
                 <Home/>
-                <MyNav nav = { nav1 }/>
-                <MyNav nav = { nav2 }/>
+                <MyNav nav = { nav1 } title="导航1"/>
+                <MyNav nav = { nav2 } title="导航2"/>
             </div>
         )
     }
