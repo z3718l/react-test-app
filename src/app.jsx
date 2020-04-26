@@ -8,6 +8,7 @@ import React from 'react'
 // import IfDemo from './ifDemo.jsx'
 
 import NewForm from './newForm.jsx'
+import RefsDom from './refsDom.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -38,6 +39,7 @@ class App extends React.Component{
                 {/* <button onClick={this.clickHandler}>修改文本</button> */}
                 {/* <IfDemo/> */}
                 <NewForm/>
+                <RefsDom/>
             </div>
         )
     }
