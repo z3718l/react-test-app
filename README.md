@@ -68,5 +68,11 @@ jsx语法：JavaScript + XML语法（HTML）<br/>
 ### 非受控组件
 如果表单的change事件比较多，这样需要写很多获取value的事件
 
+### 状态提升
+将子元素的公用的数据提到父元素，再传递给子元素
+
+### 组合和继承
+this.props.children
+
 
 

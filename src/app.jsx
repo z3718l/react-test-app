@@ -7,8 +7,9 @@ import React from 'react'
 // import StateComponent from './stateComponent.jsx'
 // import IfDemo from './ifDemo.jsx'
 
-import NewForm from './newForm.jsx'
-import RefsDom from './refsDom.jsx'
+// import NewForm from './newForm.jsx'
+// import RefsDom from './refsDom.jsx'
+import Parent from './components/parent.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -38,8 +39,9 @@ class App extends React.Component{
                 <SetStateDemo/> */}
                 {/* <button onClick={this.clickHandler}>修改文本</button> */}
                 {/* <IfDemo/> */}
-                <NewForm/>
-                <RefsDom/>
+                {/* <NewForm/>
+                <RefsDom/> */}
+                <Parent/>
             </div>
         )
     }
