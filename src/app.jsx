@@ -4,8 +4,8 @@ import Home from './home.jsx'
 import MyNav from './myNav.jsx'
 import ComponentLife from './compnentLife.jsx'
 import SetStateDemo from './setStateDemo.jsx'
-
 import StateComponent from './stateComponent.jsx'
+import IfDemo from './ifDemo.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -34,6 +34,7 @@ class App extends React.Component{
                 <ComponentLife titleText={ this.state.titleText } clickHandlers={this.clickHandler}/>
                 <SetStateDemo/>
                 {/* <button onClick={this.clickHandler}>修改文本</button> */}
+                <IfDemo/>
             </div>
         )
     }
