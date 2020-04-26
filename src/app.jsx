@@ -3,6 +3,7 @@ import React from 'react'
 import Home from './home.jsx'
 import MyNav from './myNav.jsx'
 import ComponentLife from './compnentLife.jsx'
+import SetStateDemo from './setStateDemo.jsx'
 
 import StateComponent from './stateComponent.jsx'
 class App extends React.Component{
@@ -31,6 +32,7 @@ class App extends React.Component{
                 <MyNav nav = { nav2 } title="导航2"/>
                 <StateComponent/>
                 <ComponentLife titleText={ this.state.titleText } clickHandlers={this.clickHandler}/>
+                <SetStateDemo/>
                 {/* <button onClick={this.clickHandler}>修改文本</button> */}
             </div>
         )

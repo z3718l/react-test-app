@@ -39,3 +39,8 @@ jsx语法：JavaScript + XML语法（HTML）<br/>
     5. componentDidUpdate:数据修改完成执行（state、props）<br/>
     6. componentWillReveiceProps:props发生改变时代执行<br/>
     7. componentWillUnmount:组件卸载之前执行
+
+### setState更新是同步还是异步
+1. setState会引起视图重绘
+2. 在可控的情况下是异步，在非可控的情况下是同步
+
