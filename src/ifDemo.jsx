@@ -9,7 +9,8 @@ export default class IfDemo extends React.Component{
     constructor() {
         super()
         this.state = {
-            isLogin: false
+            isLogin: false,
+            names: []
         }
     }
     clickHandle = () => {
@@ -18,6 +19,7 @@ export default class IfDemo extends React.Component{
         })
     }
     render () {
+        const { names } =  this.state
         let showView = this.state.isLogin ? 
         <div>zhangsan</div> :
         <div>请登录</div>
@@ -25,6 +27,18 @@ export default class IfDemo extends React.Component{
             <div>
                 条件渲染 { showView }
                 <p><button onClick={ this.clickHandle }>登录</button></p>
+                {
+                   names.length > 0 ?
+                   <div>
+                       {
+                           names.map((element, index) => {
+                            return <p key={ index }>{ element }</p>
+                           })
+                       }
+                   </div>
+                   :
+                   <div>正在请求数据...</div>
+                }
             </div>
         )
     }
