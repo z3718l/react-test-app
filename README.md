@@ -65,4 +65,8 @@ jsx语法：JavaScript + XML语法（HTML）<br/>
 3. 集成第三方 DOM 库。<br/>
 注意：勿过度使用 Refs
 
+### 非受控组件
+如果表单的change事件比较多，这样需要写很多获取value的事件
+
+
 
