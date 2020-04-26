@@ -9,7 +9,8 @@ import React from 'react'
 
 // import NewForm from './newForm.jsx'
 // import RefsDom from './refsDom.jsx'
-import Parent from './components/parent.jsx'
+// import Parent from './components/parent.jsx'
+import ComponetsOptions from './componetsOptions.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -41,7 +42,10 @@ class App extends React.Component{
                 {/* <IfDemo/> */}
                 {/* <NewForm/>
                 <RefsDom/> */}
-                <Parent/>
+                {/* <Parent/> */}
+                <ComponetsOptions>
+                    <div>我是子数据（嵌套）</div>
+                </ComponetsOptions>
             </div>
         )
     }
