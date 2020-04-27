@@ -94,8 +94,6 @@ https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxyin
             })
         )
     }
+    文件需要export导出，参数需要return出去
     ```
-### 文件需要export导出，参数需要return出去
-
-
 
