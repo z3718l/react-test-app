@@ -76,6 +76,25 @@ this.props.children
 
 ### 通过yarn run eject/npm run eject调出来webpack配置
 
+### 跨域问题解决
+https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxying-api-requests-in-development.md<br/>
+1. 在package.json中进行配置
+   "proxy": "http://localhost:4000", // 跨域的地址
+2. 通过http-proxy-middleware插件
+    ```
+    npm install http-proxy-middleware --save
+    在src文件夹下新建setupProxy.js
+    const { createProxyMiddleware } = require('http-proxy-middleware');
+    module.exports = function(app) {
+        app.use(
+            '/api',
+            createProxyMiddleware({
+            target: 'http://localhost:5000', // 跨域的地址
+            changeOrigin: true,
+            })
+        )
+    }
+    ```
 
 
 
