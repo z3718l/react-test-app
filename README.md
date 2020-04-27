@@ -97,3 +97,12 @@ https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxyin
     文件需要export导出，参数需要return出去
     ```
 
+
+### 路由
+
+### history路由和hash路由
+
+### exact精准匹配路由
+
+
+

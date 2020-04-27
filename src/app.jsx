@@ -62,7 +62,7 @@ class App extends React.Component{
                 <Router>
                     <ul>
                         <li><Link to="/home">Home</Link></li>
-                        <li><Link to="/mine">Mine</Link></li>
+                        <li><Link exact to="/mine">Mine</Link></li>
                     </ul>
                     <Switch>
                         <Route path="/home">
