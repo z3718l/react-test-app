@@ -18,6 +18,7 @@ import {
     Switch,
     Route,
     NavLink,
+    Redirect
   } from "react-router-dom";
 import Home from './pages/Home.jsx'
 import Mine from './pages/Mine.jsx'
@@ -80,6 +81,9 @@ class App extends React.Component{
                         <Route exact strict path="/demo2" render = { (props) => <Demo2 { ...props } name="zhangsan"/> }></Route>
                         <Route exact strict path="/ucenter/:id?" component={UCenter}/>
                         <Route exact strict path="/minedemo" component = { MineDemo }/>
+                        {/* 访问hellomine的时候，重定向到mine页面 */}
+                        {/* 还可以用于用户访问权限，如果没有访问权限，直接调转到首页，如果有访问权限，就显示当前页 */}
+                        <Redirect from='/hellomine' to='/mine' /> 
                         <Route component={NotFount}/>
                     </Switch>
                 </Router>  
