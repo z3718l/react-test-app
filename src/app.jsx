@@ -21,6 +21,7 @@ import {
   } from "react-router-dom";
 import Home from './pages/Home.jsx'
 import Mine from './pages/Mine.jsx'
+import Demo2 from './pages/Demo2.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -62,15 +63,17 @@ class App extends React.Component{
                 <Router>
                     <ul>
                         <li><Link to="/home">Home</Link></li>
-                        <li><Link exact to="/mine">Mine</Link></li>
+                        <li><Link to="/mine">Mine</Link></li>
                     </ul>
                     <Switch>
-                        <Route path="/home">
+                        <Route exact path="/home">
                             <Home />
                         </Route>
-                        <Route path="/mine">
+                        <Route exact path="/mine">
                             <Mine />
                         </Route>
+                        <Route path="/demo" render = { () => <div>简单的写法demo</div> }></Route>
+                        <Route path="/demo2" render = { (props) => <Demo2 { ...props } name="zhangsan"/> }></Route>
                     </Switch>
                 </Router>  
             </div>
