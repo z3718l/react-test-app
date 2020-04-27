@@ -17,11 +17,12 @@ import {
     BrowserRouter as Router,
     Switch,
     Route,
-    Link,
+    NavLink,
   } from "react-router-dom";
 import Home from './pages/Home.jsx'
 import Mine from './pages/Mine.jsx'
 import Demo2 from './pages/Demo2.jsx'
+import NotFount from './pages/NotFount.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -62,18 +63,19 @@ class App extends React.Component{
                 {/* Switch:确保只加载一个页面 */}
                 <Router>
                     <ul>
-                        <li><Link to="/home">Home</Link></li>
-                        <li><Link to="/mine">Mine</Link></li>
+                        <li><NavLink to="/home">Home</NavLink></li>
+                        <li><NavLink to="/mine">Mine</NavLink></li>
                     </ul>
                     <Switch>
-                        <Route exact path="/home">
+                        <Route exact strict path="/home">
                             <Home />
                         </Route>
-                        <Route exact path="/mine">
+                        <Route exact strict path="/mine">
                             <Mine />
                         </Route>
                         <Route path="/demo" render = { () => <div>简单的写法demo</div> }></Route>
                         <Route path="/demo2" render = { (props) => <Demo2 { ...props } name="zhangsan"/> }></Route>
+                        <Route component={NotFount}/>
                     </Switch>
                 </Router>  
             </div>
