@@ -180,6 +180,7 @@ props.history.replace('/home') // replace直接替换
 是高阶组件
 
 ### prompt
+导航离开之前，可以添加一个判断警告
 
 ### 路由嵌套
 ```
