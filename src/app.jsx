@@ -12,6 +12,7 @@ import React from 'react'
 // import Parent from './components/parent.jsx'
 import ComponetsOptions from './componetsOptions.jsx'
 import AntdDemo from './antdDemo.jsx'
+import FecthDemo from './fetchDemo.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -48,6 +49,7 @@ class App extends React.Component{
                     <div>我是子数据（嵌套）</div>
                 </ComponetsOptions>
                 <AntdDemo/>
+                <FecthDemo/>
             </div>
         )
     }
