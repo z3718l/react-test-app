@@ -177,6 +177,7 @@ props.history.replace('/home') // replace直接替换
 
 ### widthRouter高阶组件进行重定向
 由于没有被路由直接管理，获取不到对应的路由数据
+是高阶组件
 
 ### prompt
 

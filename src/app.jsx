@@ -26,6 +26,7 @@ import Demo2 from './pages/Demo2.jsx'
 import NotFount from './pages/NotFount.jsx'
 import UCenter from './pages/UCenter.jsx'
 import MineDemo from './pages/MineDemo.jsx'
+// import MineDem from './pages/MineDem.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -69,6 +70,7 @@ class App extends React.Component{
                         <li><NavLink to="/home">Home</NavLink></li>
                         <li><NavLink to="/mine">Mine</NavLink></li>
                         <li><NavLink to="/minedemo">MineDemo</NavLink></li>
+                        {/* <li><NavLink to="/minedemo2">MineDemo2</NavLink></li> */}
                     </ul>
                     <Switch>
                         <Route exact strict path="/home">
@@ -84,9 +86,12 @@ class App extends React.Component{
                         {/* 访问hellomine的时候，重定向到mine页面 */}
                         {/* 还可以用于用户访问权限，如果没有访问权限，直接调转到首页，如果有访问权限，就显示当前页 */}
                         <Redirect from='/hellomine' to='/mine' /> 
+                        
                         <Route component={NotFount}/>
                     </Switch>
                 </Router>  
+                {/* 将组件放到Router组件外面，不让Router进行管理 */}
+                {/* <MineDem/> */}
             </div>
         )
     }
