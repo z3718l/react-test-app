@@ -23,6 +23,7 @@ import Home from './pages/Home.jsx'
 import Mine from './pages/Mine.jsx'
 import Demo2 from './pages/Demo2.jsx'
 import NotFount from './pages/NotFount.jsx'
+import UCenter from './pages/UCenter.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -73,8 +74,9 @@ class App extends React.Component{
                         <Route exact strict path="/mine">
                             <Mine />
                         </Route>
-                        <Route path="/demo" render = { () => <div>简单的写法demo</div> }></Route>
-                        <Route path="/demo2" render = { (props) => <Demo2 { ...props } name="zhangsan"/> }></Route>
+                        <Route exact strict path="/demo" render = { () => <div>简单的写法demo</div> }></Route>
+                        <Route exact strict path="/demo2" render = { (props) => <Demo2 { ...props } name="zhangsan"/> }></Route>
+                        <Route exact strict path="/ucenter/:id?" component={UCenter}/>
                         <Route component={NotFount}/>
                     </Switch>
                 </Router>  
