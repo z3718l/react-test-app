@@ -24,6 +24,7 @@ import Mine from './pages/Mine.jsx'
 import Demo2 from './pages/Demo2.jsx'
 import NotFount from './pages/NotFount.jsx'
 import UCenter from './pages/UCenter.jsx'
+import MineDemo from './pages/MineDemo.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -66,6 +67,7 @@ class App extends React.Component{
                     <ul>
                         <li><NavLink to="/home">Home</NavLink></li>
                         <li><NavLink to="/mine">Mine</NavLink></li>
+                        <li><NavLink to="/minedemo">MineDemo</NavLink></li>
                     </ul>
                     <Switch>
                         <Route exact strict path="/home">
@@ -77,6 +79,7 @@ class App extends React.Component{
                         <Route exact strict path="/demo" render = { () => <div>简单的写法demo</div> }></Route>
                         <Route exact strict path="/demo2" render = { (props) => <Demo2 { ...props } name="zhangsan"/> }></Route>
                         <Route exact strict path="/ucenter/:id?" component={UCenter}/>
+                        <Route exact strict path="/minedemo" component = { MineDemo }/>
                         <Route component={NotFount}/>
                     </Switch>
                 </Router>  
