@@ -10,9 +10,17 @@ import React from 'react'
 // import NewForm from './newForm.jsx'
 // import RefsDom from './refsDom.jsx'
 // import Parent from './components/parent.jsx'
-import ComponetsOptions from './componetsOptions.jsx'
-import AntdDemo from './antdDemo.jsx'
-import FecthDemo from './fetchDemo.jsx'
+// import ComponetsOptions from './componetsOptions.jsx'
+// import AntdDemo from './antdDemo.jsx'
+// import FecthDemo from './fetchDemo.jsx'
+import {
+    BrowserRouter as Router,
+    Switch,
+    Route,
+    Link,
+  } from "react-router-dom";
+import Home from './pages/Home.jsx'
+import Mine from './pages/Mine.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -45,11 +53,26 @@ class App extends React.Component{
                 {/* <NewForm/>
                 <RefsDom/> */}
                 {/* <Parent/> */}
-                <ComponetsOptions>
+                {/* <ComponetsOptions>
                     <div>我是子数据（嵌套）</div>
                 </ComponetsOptions>
                 <AntdDemo/>
-                <FecthDemo/>
+                <FecthDemo/> */}
+                
+                <Router>
+                    <ul>
+                        <li><Link to="/home">Home</Link></li>
+                        <li><Link to="/mine">Mine</Link></li>
+                    </ul>
+                    <Switch>
+                        <Route path="/home">
+                            <Home />
+                        </Route>
+                        <Route path="/mine">
+                            <Mine />
+                        </Route>
+                    </Switch>
+                </Router>  
             </div>
         )
     }
