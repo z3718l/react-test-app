@@ -106,4 +106,27 @@ https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxyin
 
 ### strict 配合exact更加精准匹配路由
 
+### 404页面配置
+```
+<Router>
+    <ul>
+        <li><Link to="/home">Home</Link></li>
+        <li><Link exact to="/mine">Mine</Link></li>
+    </ul>
+    <Switch>
+        <Route path="/home">
+            <Home />
+        </Route>
+        <Route path="/mine">
+            <Mine />
+        </Route>
+        <Route>
+            <NotFount />
+        </Route>
+    </Switch>
+</Router>
+
+<Route path="/mine" coponent={ Mine }></Route>
+```
+
 

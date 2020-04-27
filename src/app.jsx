@@ -58,7 +58,7 @@ class App extends React.Component{
                 </ComponetsOptions>
                 <AntdDemo/>
                 <FecthDemo/> */}
-                
+                {/* Switch:确保只加载一个页面 */}
                 <Router>
                     <ul>
                         <li><Link to="/home">Home</Link></li>
