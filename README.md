@@ -129,4 +129,57 @@ https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxyin
 <Route path="/mine" coponent={ Mine }></Route>
 ```
 
+### NavLink高亮显示选中项
+```
+<NavLink to="/faq" activeClassName="selected">
+  FAQs
+</NavLink>
 
+<NavLink exact to="/profile">
+  Profile
+</NavLink>
+
+<NavLink
+  to="/faq"
+  activeStyle={{
+    fontWeight: "bold",
+    color: "red"
+  }}
+>
+  FAQs
+</NavLink>
+```
+
+### 路由跳转携带参数
+
+### 读取参数
+```
+const params = new URLSearchParams(props.location.search)
+console.log(params.get('name'))
+console.log(params.get('age'))
+
+import querystring from 'querystring'
+const value = querystring.parse(props.location.search)
+```
+
+### redirect重定向
+
+### push、replace进行重定向
+
+### widthRouter高阶组件进行重定向
+由于没有被路由直接管理，获取不到对应的路由数据
+
+### prompt
+
+### 路由嵌套
+```
+<Book>
+    <Switch>
+        <Route path="/book/webbook" component={WebBook}/>
+        <Route path="/book/javabook" component={JavaBook}/>
+    </Switch>
+</Book>
+
+在book组件中显示
+{this.props.children}
+```
