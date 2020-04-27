@@ -11,6 +11,7 @@ import React from 'react'
 // import RefsDom from './refsDom.jsx'
 // import Parent from './components/parent.jsx'
 import ComponetsOptions from './componetsOptions.jsx'
+import AntdDemo from './antdDemo.jsx'
 class App extends React.Component{
     constructor() {
         super()
@@ -46,6 +47,7 @@ class App extends React.Component{
                 <ComponetsOptions>
                     <div>我是子数据（嵌套）</div>
                 </ComponetsOptions>
+                <AntdDemo/>
             </div>
         )
     }
