@@ -163,8 +163,17 @@ const value = querystring.parse(props.location.search)
 ```
 
 ### redirect重定向
+```
+<Redirect from='/hellomine' to='/mine' /> 
+访问hellomine的时候，重定向到mine页面
+还可以用于用户访问权限，如果没有访问权限，直接调转到首页，如果有访问权限，就显示当前页
+```
 
 ### push、replace进行重定向
+```
+props.history.push('/home') // push在内存中还存在
+props.history.replace('/home') // replace直接替换
+```
 
 ### widthRouter高阶组件进行重定向
 由于没有被路由直接管理，获取不到对应的路由数据

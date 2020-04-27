@@ -10,9 +10,18 @@ const MineDemo = (props) => {
     /**
      * 需要把json对象中的?截取掉，就可以使用了
      */
-    console.log(value) // {?name: "hahah", age: "12"} 
+    console.log(value) // {?name: "hahah", age: "12"}
+    const clickHandlerMine = () => {
+        // console.log('点击返回首页')
+        console.log(props)
+        // props.history.push('/home')
+        props.history.replace('/home')
+    }
     return (
-        <div>MineDemo</div>
+        <div>
+            {/* <p>MineDemo</p> */}
+            <button onClick={ clickHandlerMine }>返回首页</button>
+        </div>
     )
 }
 export default MineDemo
