@@ -104,5 +104,6 @@ https://github.com/facebook/create-react-app/blob/master/docusaurus/docs/proxyin
 
 ### exact精准匹配路由
 
+### strict 配合exact更加精准匹配路由
 
 
