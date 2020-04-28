@@ -7,7 +7,10 @@ class App extends React.Component{
     render() {
         return (
             <div>
-                <h1>hello word</h1> 
+                <h1>hello word</h1>
+                <p>{this.props.value}</p>
+                <button onClick={this.props.onIncrement}>增加</button>
+                <button onClick={this.props.onDecrement}>减少</button>
             </div>
         )
     }
