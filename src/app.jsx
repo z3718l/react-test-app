@@ -2,7 +2,13 @@
 import React from 'react'
 
 class App extends React.Component{
-    
+    handleItemClick = (type) => {
+        console.log(type)
+        console.log('点击事件')
+    }
+    handleItemClick2 = () => {
+        console.log('点击事件2')
+    }
     // 渲染函数
     render() {
         return (
@@ -11,6 +17,9 @@ class App extends React.Component{
                 <p>{this.props.value}</p>
                 <button onClick={this.props.onIncrement}>增加</button>
                 <button onClick={this.props.onDecrement}>减少</button>
+
+                <button onClick={ () => { this.handleItemClick('aaa') }}>点击test</button>
+                <button onClick={ this.handleItemClick2 }>点击test2</button>
             </div>
         )
     }
