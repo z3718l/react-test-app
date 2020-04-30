@@ -1,10 +1,11 @@
+import * as actions from '../constans/index'
 export function increment() {
     return {
-        type: 'INCREMENT'
+        type: actions.INCREMENT
     }
 }
 export function decrement () {
     return {
-        type: 'DECREMENT'
+        type: actions.DECREMENT
     }
 }

@@ -128,4 +128,25 @@ react-redux: 为了在react中容易的使用
    <button onClick={ () => increment() }>增加</button>
    <button onClick={ () => decrement() }>减少</button>
    ```
+不理想的地方：action中会有很多操作
+15. 通过bindActionCreators
+    ```
+    import { bindActionCreators } from 'redux'
+    import * as counterAction from './actions/counter'
+    ```
+16. 修改mapDispatchToProps写法
+    ```
+    const mapDispatchToProps = (dispatch) => {
+      return {
+         counterAction: bindActionCreators(counterAction, dispatch)
+      }
+   }
+    ```
+17. 修改button点击事件
+    ```
+    <button onClick={ () => this.props.counterAction.increment() }>增加</button>
+    <button onClick={ () => this.props.counterAction.decrement() }>减少</button>
+    ```
+18. 提取公共常量
+    
     
