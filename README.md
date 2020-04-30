@@ -148,5 +148,25 @@ react-redux: 为了在react中容易的使用
     <button onClick={ () => this.props.counterAction.decrement() }>减少</button>
     ```
 18. 提取公共常量
-    
+    ```
+    1、新建constans文件夹
+    export const INCREMENT = 'INCREMENT'
+    export const DECREMENT = 'DECREMENT'
+    ```
+19. 在actons和reducer中添加对应的常量
+      ```
+      import * as actions from '../constans/index'
+      export function increment(num) {
+         return {
+            type: actions.INCREMENT,
+            num
+         }
+      }
+      ```
+20. 传递参数
+   ```
+   1、点击的时候，在方法中传入参数
+   2、在actions中接收参数
+   3、在reducer中使用参数
+   ```
     

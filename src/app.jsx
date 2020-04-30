@@ -22,8 +22,8 @@ class App extends React.Component{
                 <h1>hello word</h1>
                 {/* <p>{this.props.value}</p> */}
                 <p>{this.props.counters}</p>
-                <button onClick={ () => this.props.counterAction.increment() }>增加</button>
-                <button onClick={ () => this.props.counterAction.decrement() }>减少</button>
+                <button onClick={ () => this.props.counterAction.increment(10) }>增加</button>
+                <button onClick={ () => this.props.counterAction.decrement(3) }>减少</button>
                 {/* <button onClick={ () => increment() }>增加</button>
                 <button onClick={ () => decrement() }>减少</button> */}
                 {/* <button onClick={this.props.onIncrement}>增加</button>

@@ -1,11 +1,13 @@
 import * as actions from '../constans/index'
-export function increment() {
+export function increment(num) {
     return {
-        type: actions.INCREMENT
+        type: actions.INCREMENT,
+        num
     }
 }
-export function decrement () {
+export function decrement (num) {
     return {
-        type: actions.DECREMENT
+        type: actions.DECREMENT,
+        num
     }
 }

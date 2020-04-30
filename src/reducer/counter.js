@@ -4,9 +4,9 @@ import * as actions from '../constans/index'
 const counter = (state = 1, action) => {
     switch (action.type) {
         case actions.INCREMENT:
-            return state + 1
+            return state + action.num
         case actions.DECREMENT:
-            return state - 1
+            return state - action.num
         default:
             return state
     }
