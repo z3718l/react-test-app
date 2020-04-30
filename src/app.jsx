@@ -1,6 +1,7 @@
 // 用类的形式创建组件,还有hook形式
 import React from 'react'
 import { connect } from 'react-redux'
+import { increment, decrement } from './actions/counter'
 
 class App extends React.Component{
     // handleItemClick = (type) => {
@@ -12,13 +13,15 @@ class App extends React.Component{
     // }
     // 渲染函数
     render() {
+        console.log(this.props)
+        const { increment, decrement } = this.props
         return (
             <div>
                 <h1>hello word</h1>
                 {/* <p>{this.props.value}</p> */}
                 <p>{this.props.counters}</p>
-                <button>增加</button>
-                <button>减少</button>
+                <button onClick={ () => increment() }>增加</button>
+                <button onClick={ () => decrement() }>减少</button>
                 {/* <button onClick={this.props.onIncrement}>增加</button>
                 <button onClick={this.props.onDecrement}>减少</button> */}
 
@@ -34,5 +37,11 @@ const mapStateToProps = (state) => {
         counters: state
     }
 }
+const mapDispatchToProps = (dispatch) => {
+    return {
+        increment: () => { dispatch(increment()) },
+        decrement: () => { dispatch(decrement()) }
+    }
+}
 // export default App
-export default connect(mapStateToProps)(App)
+export default connect(mapStateToProps, mapDispatchToProps)(App)

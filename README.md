@@ -95,5 +95,37 @@ react-redux: 为了在react中容易的使用
    }
    export default connect(mapStateToProps)(App)
    ``` 
-11. 
+11. 新建一个action
+    ```
+    export function increment() {
+      return {
+         type: 'INCREMENT'
+      }
+      }
+      export function decrement () {
+         return {
+            type: 'DECREMENT'
+         }
+      }
+    ```
+12. 引入increment,decrement
+    ```
+    import { increment, decrement } from './actions/counter'
+    ```
+13. 声明mapDispatchToProps
+    ```
+    const mapDispatchToProps = (dispatch) => {
+      return {
+         increment: () => { dispatch(increment()) },
+         decrement: () => { dispatch(decrement()) }
+      }
+   }
+   export default connect(mapStateToProps, mapDispatchToProps)(App)
+    ```
+14. 通过button点击触发
+   ```
+   const { increment, decrement } = this.props
+   <button onClick={ () => increment() }>增加</button>
+   <button onClick={ () => decrement() }>减少</button>
+   ```
     
