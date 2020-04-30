@@ -2,10 +2,18 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app.jsx';
 // import counter from './reducer/counter'
-import { createStore } from 'redux'
+
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import rootReducer from './reducer/index'
-const store = createStore(rootReducer)
+// 中间件
+const looger = store => next => action => {
+  console.log('dispatch=>', action)
+  let result = next(action)
+  console.log('next state->', store.getState())
+  return result
+}
+const store = createStore(rootReducer, {}, applyMiddleware(looger))
 // store.subscribe(() => { console.log(store.getState()) })
 // const render = () => {
 //   ReactDOM.render(
@@ -19,6 +27,8 @@ const store = createStore(rootReducer)
 // }
 // render()
 // store.subscribe(render)
+
+
 
 ReactDOM.render(
   <Provider store={ store }>
