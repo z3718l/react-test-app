@@ -169,4 +169,25 @@ react-redux: 为了在react中容易的使用
    2、在actions中接收参数
    3、在reducer中使用参数
    ```
-    
+21. 合并reducer,在reducer文件夹中新建index.js
+    ```
+    import { combineReducers } from 'redux'
+    import counter from './counter'
+    const rootReducer = combineReducers({
+      counter
+    })
+    export default rootReducer
+    ```
+22. 修改根目录的引用
+   ```
+   import rootReducer from './reducer/index'
+   const store = createStore(rootReducer)
+   ```
+23. 取值方式修改
+   ```
+   const mapStateToProps = (state) => {
+    return {
+        counters: state.counter
+    }
+   }
+   ```

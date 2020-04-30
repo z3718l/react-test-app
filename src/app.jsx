@@ -38,7 +38,7 @@ class App extends React.Component{
 
 const mapStateToProps = (state) => {
     return {
-        counters: state
+        counters: state.counter
     }
 }
 // const mapDispatchToProps = (dispatch) => {

@@ -1,10 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './app.jsx';
-import counter from './reducer/counter'
+// import counter from './reducer/counter'
 import { createStore } from 'redux'
 import { Provider } from 'react-redux'
-const store = createStore(counter)
+import rootReducer from './reducer/index'
+const store = createStore(rootReducer)
 // store.subscribe(() => { console.log(store.getState()) })
 // const render = () => {
 //   ReactDOM.render(
