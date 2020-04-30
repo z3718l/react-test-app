@@ -4,6 +4,8 @@ import { connect } from 'react-redux'
 // import { increment, decrement } from './actions/counter'
 import { bindActionCreators } from 'redux'
 import * as counterAction from './actions/counter'
+import { adduser } from './actions/user'
+import User from './components/user'
 
 class App extends React.Component{
     // handleItemClick = (type) => {
@@ -31,14 +33,19 @@ class App extends React.Component{
 
                 {/* <button onClick={ () => { this.handleItemClick('aaa') }}>点击test</button>
                 <button onClick={ this.handleItemClick2 }>点击test2</button> */}
+                <User value={ this.props.user }/>
+                <button onClick={ () => this.props.setUser() }>设置user</button>
+                <p>{this.props.users.name}</p>
             </div>
         )
     }
 }
 
 const mapStateToProps = (state) => {
+    console.log(state, '===state')
     return {
-        counters: state.counter
+        counters: state.counter,
+        users: state.user
     }
 }
 // const mapDispatchToProps = (dispatch) => {
@@ -49,7 +56,8 @@ const mapStateToProps = (state) => {
 // }
 const mapDispatchToProps = (dispatch) => {
     return {
-        counterAction: bindActionCreators(counterAction, dispatch)
+        counterAction: bindActionCreators(counterAction, dispatch),
+        setUser: bindActionCreators(adduser, dispatch)
     }
 }
 // export default App
