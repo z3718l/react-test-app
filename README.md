@@ -1,7 +1,7 @@
 ## Redux
 
 redux和react-redux的区别
-redux: js的状态管理，createStore
+redux: js的状态管理，createStore，是一个独立的模块
 react-redux: 为了在react中容易的使用
 
 1. 安装redux
@@ -42,3 +42,58 @@ react-redux: 为了在react中容易的使用
    ```
    store.subscribe(() => { console.log(store.getState()) })
    ```
+7. 安装react-redux
+   ```
+   cnpm install react-redux
+   ```
+8. 在根组件通过react-redux中的Provider把redux和react-redux进行关联
+   ```
+   import { Provider } from 'react-redux'
+   const store = createStore(counter)
+   ReactDOM.render(
+   <Provider store={ store }>
+      <App/>
+   </Provider>,
+   document.getElementById('root')
+   )
+   ```
+9. 在自组件中引入connect<br/>
+   connect作用就是帮我们把app组件和redux连接起来
+   ```
+   import { connect } from 'react-redux'
+   class App extends React.Component{
+      render() {
+         return (
+               <div>
+                  <button>增加</button>
+                  <button>减少</button>
+               </div>
+         )
+      }
+   }
+   export default connect(mapStateToProps)(App)
+   ```
+10. 在app组件中通过mapStateToProps读取数据
+   ```
+   import { connect } from 'react-redux'
+   class App extends React.Component{
+      render() {
+         return (
+               <div>
+                  <p>{this.props.counter}</p>
+                  <button>增加</button>
+                  <button>减少</button>
+               </div>
+         )
+      }
+   }
+   // counter只是一个变量，可以任意定义，state是在store中传进来的数据
+   const mapStateToProps = (state) => {
+      return {
+         counter: state
+      }
+   }
+   export default connect(mapStateToProps)(App)
+   ``` 
+11. 
+    
