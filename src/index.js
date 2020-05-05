@@ -4,24 +4,26 @@ import App from './app.jsx';
 // import counter from './reducer/counter'
 
 import { createStore, applyMiddleware } from 'redux'
+import logger from 'redux-logger'
 import { Provider } from 'react-redux'
 import rootReducer from './reducer/index'
 // 中间件
 // 注意：中间件要放在创建场库的上面，因为applyMiddleware要依赖createStore
-const looger = store => next => action => {
-  console.log('dispatch=>', action)
-  let result = next(action) // 加载下一个中间件
-  console.log('next state->', store.getState())
-  return result
-}
-const error = store => next => action => {
-  try{
-    next(action)
-  }catch(e){
-    console.log(e)
-  }
-}
-const store = createStore(rootReducer, {}, applyMiddleware(looger,error))
+// const looger = store => next => action => {
+//   console.log('dispatch=>', action)
+//   let result = next(action) // 加载下一个中间件
+//   console.log('next state->', store.getState())
+//   return result
+// }
+// const error = store => next => action => {
+//   try{
+//     next(action)
+//   }catch(e){
+//     console.log(e)
+//   }
+// }
+// const store = createStore(rootReducer, {}, applyMiddleware(looger,error))
+const store = createStore(rootReducer, {}, applyMiddleware(logger))
 // store.subscribe(() => { console.log(store.getState()) })
 // const render = () => {
 //   ReactDOM.render(
