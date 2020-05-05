@@ -1,9 +1,16 @@
-import { ADD_USER } from '../constans/index'
-const user = (state = {}, action) => {
+import { FETCH_USER_SUCCESS } from '../constans/index'
+
+let initState = {
+    user: {}
+}
+
+const user = (state = initState, action) => {
     switch (action.type) {
-        case ADD_USER:
-            state.name = 'zhangsan'
-            return state
+        case FETCH_USER_SUCCESS:
+            // 不要直接修改state,返回从action中取到的数据,需要在action中定义user
+            return {
+                user: action.user
+            }
         default:
             return state
     }

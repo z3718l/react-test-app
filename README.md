@@ -201,4 +201,62 @@ react-redux: 为了在react中容易的使用
     import thunk from 'redux-thunk'
     const store = createStore(rootReducer, {}, applyMiddleware(logger,thunk))
     ```
-27. 
+27. 异步请求，获取user信息
+    ```
+    1、修改constans-index.js
+    export const FETCH_USER_SUCCESS = 'FETCH_USER_SUCCESS'
+    2、修改reducer-user
+    注意：不能直接修改state，只能返回新的state
+    import { FETCH_USER_SUCCESS } from '../constans/index'
+    let initState = {
+      user: {}
+    }
+
+    const user = (state = initState, action) => {
+         switch (action.type) {
+            case FETCH_USER_SUCCESS:
+                  // 不要直接修改state,返回从action中取到的数据,需要在action中定义user
+                  return {
+                     user: action.user
+                  }
+            default:
+               return state
+       }
+    }
+    export default user
+    3、修改action
+    export function fetch_user(user) {
+    return {
+        type: actions.FETCH_USER_SUCCESS,
+        user
+      }
+    }
+    export const get_user = () => {
+      return dispatch => {
+        fetch('http://jsonplaceholder.typicode.com/users')
+        .then(res => res.json())
+        .then(data => {
+            dispatch(fetch_user(data[0]))
+        })
+      }
+    }
+    4、在user.jsx组件中调用get_user方法
+    import { connect } from 'react-redux'
+    import { bindActionCreators } from 'redux'
+    import * as userActions from '../actions/user'
+    const mapStateToPropos = (state) => {
+    return {
+        user: state.user
+      }
+    }
+    const mapDispatchToPropos = (dispatch) => {
+      return {
+         userActions: bindActionCreators(userActions, dispatch)
+      }
+    }
+    export default connect(mapStateToPropos,mapDispatchToPropos)(User)
+    5、点击获取，并写入user
+    <button onClick={ () => { this.props.userActions.get_user() } }>点击发请求</button>
+    <p> { this.props.user.user.name } </p>
+    ```
+    
