@@ -5,6 +5,7 @@ import App from './app.jsx';
 
 import { createStore, applyMiddleware } from 'redux'
 import logger from 'redux-logger'
+import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
 import rootReducer from './reducer/index'
 // 中间件
@@ -23,7 +24,7 @@ import rootReducer from './reducer/index'
 //   }
 // }
 // const store = createStore(rootReducer, {}, applyMiddleware(looger,error))
-const store = createStore(rootReducer, {}, applyMiddleware(logger))
+const store = createStore(rootReducer, {}, applyMiddleware(logger,thunk))
 // store.subscribe(() => { console.log(store.getState()) })
 // const render = () => {
 //   ReactDOM.render(

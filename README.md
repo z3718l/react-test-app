@@ -194,4 +194,11 @@ react-redux: 为了在react中容易的使用
 23. 添加user
 24. 添加中间件
 25. applyMiddleware用于加载中间件
-26. 
+26. 添加异步操作
+    ```
+    cnpm install --save redux-thunk
+    在index.js中引入
+    import thunk from 'redux-thunk'
+    const store = createStore(rootReducer, {}, applyMiddleware(logger,thunk))
+    ```
+27. 
