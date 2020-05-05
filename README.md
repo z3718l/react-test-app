@@ -194,3 +194,4 @@ react-redux: 为了在react中容易的使用
 23. 添加user
 24. 添加中间件
 25. applyMiddleware用于加载中间件
+26. 
