@@ -4,6 +4,7 @@ import App from './app.jsx';
 // import counter from './reducer/counter'
 
 import { createStore, applyMiddleware } from 'redux'
+import { composeWithDevTools } from 'redux-devtools-extension'
 import logger from 'redux-logger'
 import thunk from 'redux-thunk'
 import { Provider } from 'react-redux'
@@ -24,7 +25,7 @@ import rootReducer from './reducer/index'
 //   }
 // }
 // const store = createStore(rootReducer, {}, applyMiddleware(looger,error))
-const store = createStore(rootReducer, {}, applyMiddleware(logger,thunk))
+const store = createStore(rootReducer, {}, composeWithDevTools(applyMiddleware(logger,thunk)))
 // store.subscribe(() => { console.log(store.getState()) })
 // const render = () => {
 //   ReactDOM.render(

@@ -145,6 +145,7 @@
     ]
   },
   "devDependencies": {
-    "babel-plugin-import": "^1.13.0"
+    "babel-plugin-import": "^1.13.0",
+    "redux-devtools-extension": "^2.13.8"
   }
 }

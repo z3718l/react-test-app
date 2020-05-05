@@ -259,4 +259,13 @@ react-redux: 为了在react中容易的使用
     <button onClick={ () => { this.props.userActions.get_user() } }>点击发请求</button>
     <p> { this.props.user.user.name } </p>
     ```
-    
+28. redux-thunk三种请求状态
+29. redux调试工具
+    1. 安装谷歌插件Redux DevTools
+    2. 安装依赖
+         cnpm install --save-dev redux-devtools-extension
+    3. 使用
+      ```
+      import { composeWithDevTools } from 'redux-devtools-extension'
+      const store = createStore(rootReducer, {}, composeWithDevTools(applyMiddleware(logger,thunk)))
+      ```
