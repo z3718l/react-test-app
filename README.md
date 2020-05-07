@@ -32,4 +32,38 @@
    PureComponent：可以对数据进行浅比较
    ```
 3. fragment
+   ```
+   需求：一个组件中有一个ul，li是引入的
+   Item如果不加一个外层标签，就会报错，添加外层标签，就不符合h5的标签结构
+   class Item extends React.Component {
+       render() {
+           return (
+               <div>
+                    <li>item1</li>
+                    <li>item2</li>
+               </div>
+           )
+       }
+   }
+   export default class Demo2 extends React.Component{
+       render() {
+           return (
+               <ul>
+                <Item />
+               </ul>
+           )
+       }
+   }
+   解决：通过react中的Fragment方法
+   class Item extends React.Component {
+       render() {
+           return (
+               <Fragment>
+                    <li>item1</li>
+                    <li>item2</li>
+               </Fragment>
+           )
+       }
+   }
+   ```
 4. contextType
