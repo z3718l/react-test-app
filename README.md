@@ -75,3 +75,59 @@
    ```
    详情见：Demo4
 6. 高阶组件应用：
+   ```
+   需求：有两个以上的组件，视图基本一样，只是数据来源通过不同的网路请求
+   1、新建一个高阶组件.jsx文件
+   2、定义高阶组件
+   const widthFetch = (url) => (View) => {
+
+   }
+   3、通过constructor初始化变量
+   constructor() {
+       super()
+       this.state = {
+           isLoding: true,
+           data: null
+       }
+   }
+   4、在componentDidMount生命周期中发送网路请求
+   componentDidMount() {
+       fetch(url)
+       .then(res => res.json())
+       .then(data => {
+           this.setState({
+               isLoding: false,
+               data: data
+           })
+       })
+   }
+   5、渲染视图
+   render() {
+       if (this.state.isLoding) {
+           return (
+               <div>loding...</div>
+           )
+       }else {
+           return (
+               <View data={this.state.data}></View>
+           )
+       }
+   }
+   6、导出高阶组件
+   export default widthFetch
+   ```
+   ```
+   如何使用：
+   1、引入高阶组件
+   import WidthFetch from './widthFetch'
+   2、定义方法：
+   const User = WidthFetch('http://jsonplaceholder.typicode.com/users')(props => {
+       return (
+           <div>
+                <p>UserList：{ props.data[0].name }</p>
+           </div>
+       )
+   })
+   3、导出
+   export default User
+   ```
