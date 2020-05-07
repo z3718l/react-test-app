@@ -14,5 +14,22 @@
     ```
 2. 关于渲染的问题（重新渲染的问题）
    两种方法：方法1:通过生命周期；方法2:通过react的方法
+   ```
+   1、创建一个child组件，并在parent中引用
+   2、把parent中定时计数的值传到chlid组件中
+   这样child就会接收到一直变化的值，就会不断的渲染组件，但是如果传入的时一个定值，就不需要不断的渲染
+   方法：通过shouldComponentUpdate
+   在child组件中加入判断
+   shouldComponentUpdate(nextProps, nextState) {
+       if (nextProps.num === this.props.num) {
+           return false
+       }
+       return true
+   }
+   ```
+   ```
+   通过react中的PureComponent
+   PureComponent：可以对数据进行浅比较
+   ```
 3. fragment
 4. contextType

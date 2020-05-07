@@ -1,4 +1,6 @@
 import React from 'react'
+import Child from './child'
+import Child1 from './child1'
 
 /**
  * 定时器
@@ -42,9 +44,12 @@ export default class Parent extends React.Component {
         MyAPI.unsubscribe()
     }
     render() {
+        console.log('parent render->')
         return (
             <div>
                 parent: { this.state.count }
+                <Child num={ 1 }/>
+                <Child1 num={ this.state.count }/>
             </div>
         )
     }
