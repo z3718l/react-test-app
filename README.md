@@ -260,6 +260,39 @@ react-redux: 为了在react中容易的使用
     <p> { this.props.user.user.name } </p>
     ```
 28. redux-thunk三种请求状态
+    ```
+    1、在constans中添加请求中和失败的状态
+    export const FETCH_USER_PENDING = 'FETCH_USER_PENDING'
+    export const FETCH_USER_FAILURE = 'FETCH_USER_FAILURE'
+    2、在reducer添加另外两种状态
+    import { FETCH_USER_SUCCESS, FETCH_USER_PENDING, FETCH_USER_FAILURE } from '../constans/index'
+    3、action中添加另外两种方法
+    export function fetch_user_pending() {
+      return {
+         type: actions.FETCH_USER_PENDING
+      }
+    }
+    export function fetch_user_failure(error) {
+      return {
+         type: actions.FETCH_USER_FAILURE,
+         error
+      }
+    }
+
+    dispatch(fetch_user_pending())
+    dispatch(fetch_user_failure(error.response.data))
+    4、在conponents下user组件进行展示
+      const { error, isFetching, user } = this.props.user
+      let data
+      if (error) {
+         data = error
+      } else if (isFetching) {
+         data = 'loding...'
+      } else {
+         data = user.name
+      }
+    <p> { data } </p>
+    ```
 29. redux调试工具
     1. 安装谷歌插件Redux DevTools
     2. 安装依赖
