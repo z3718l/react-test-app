@@ -132,3 +132,7 @@
    export default User
    ```
 7. 错误边界处理
+    ```
+    有错误信息，只是那一个组件报错，并友好的提示错误信息
+    通过componentDidCatch捕获错误
+    ```
