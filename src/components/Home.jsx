@@ -6,6 +6,8 @@ import Demo4 from './Demo4'
 import Todos from './Demo5/todos'
 import User from './Demo5/user'
 
+import Demo6 from './Demo6/Parent'
+
 export default class Home extends React.Component{
     render() {
         return (
@@ -17,6 +19,9 @@ export default class Home extends React.Component{
                 <Demo4/>
                 <Todos/>
                 <User/>
+
+                --------
+                <Demo6/>
             </div>
         )
     }
