@@ -5,7 +5,7 @@ class Item extends React.Component {
         return (
             <Fragment>
                 <li>item1</li>
-                <li>item1</li>
+                <li>item2</li>
             </Fragment>
         )
     }
