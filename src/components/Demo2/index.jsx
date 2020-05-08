@@ -7,6 +7,10 @@ class Item extends React.Component {
                 <li>item1</li>
                 <li>item2</li>
             </Fragment>
+            // <Fragment key={1}>
+            //     <li>item1</li>
+            //     <li>item2</li>
+            // </Fragment>
         )
     }
 }
