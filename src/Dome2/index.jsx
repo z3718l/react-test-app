@@ -34,7 +34,7 @@
 import React, { useState, useEffect } from 'react'
 export default () => {
     const [count, setCount] = useState(0); // 初始化
-    // 相当于 componentDidMount 和 componentDidUpdate:
+    // 相当于 componentDidMount , componentDidUpdate 和 componentWillUnmount:
     useEffect(() => {
         document.title = `You clicked ${count} times`;
     })
