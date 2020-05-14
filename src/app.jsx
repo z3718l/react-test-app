@@ -27,6 +27,7 @@ import NotFount from './pages/NotFount.jsx'
 import UCenter from './pages/UCenter.jsx'
 import MineDemo from './pages/MineDemo.jsx'
 // import MineDem from './pages/MineDem.jsx'
+import CopyBoard from './copyBoard'
 class App extends React.Component{
     constructor() {
         super()
@@ -48,6 +49,7 @@ class App extends React.Component{
         return (
             <div>
                 <h1>hello word</h1>
+                <CopyBoard/>
                 {/* <Home/>
                 <MyNav nav = { nav1 } title="导航1"/>
                 <MyNav nav = { nav2 } title="导航2"/>

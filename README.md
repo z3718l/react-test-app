@@ -194,3 +194,7 @@ props.history.replace('/home') // replace直接替换
 在book组件中显示
 {this.props.children}
 ```
+### 复制文本到剪切版
+```
+cnpm install save copy-to-clipboard
+```
