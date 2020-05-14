@@ -16,16 +16,18 @@ const useInputValue = (initValue) => {
     const [value, setValue] = useState(initValue)
     return {
         value,
-        onChange: (e) => { setValue(e.target.value) }
+        onChange: (e) => { setValue(e.target.value) },
+        restValue: () => { setValue("") }
     }
 }
 const TodoForm = ({ onSubmit }) => {
-    const text = useInputValue("")
+    const { restValue ,...text } = useInputValue("")
     // const password = useInputValue("")
     function handleSubmit (e) {
         e.preventDefault()
-        console.log(text, '====text')
+        // console.log(text, '====text')
         onSubmit(text.value)
+        restValue() // 清空输入框
     }
     return (
         <div>
