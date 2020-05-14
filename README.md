@@ -37,4 +37,29 @@
     2、只在react函数中使用Hook
         不要在普通的js函数中调用hook
   ```
-6. 
+6. 自定义hook
+   ```
+    import React, { useState } from 'react'
+    const useInputValue = (initValue) => {
+        const [value, setValue] = useState(initValue)
+        return {
+            value,
+            onChange: (e) => { setValue(e.target.value) }
+        }
+    }
+    const TodoForm = () => {
+        const text = useInputValue("")
+        const password = useInputValue("")
+        return (
+            <div>
+                <form>
+                    <input type="text" { ...text }/>
+                    <input type="password" { ...password }/>
+                </form>
+            </div>
+        )
+    }
+    export default TodoForm
+
+    // 每个input都有一个onChange事件，这样就不用重复的写onChange了
+   ```
