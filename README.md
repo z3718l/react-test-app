@@ -76,3 +76,7 @@
    ```
    为什么要加一个自执行函数：在useEffect中直接发起网络请求，会报警告
    ```
+9. 新特性memo
+   ```
+   export default React.memo(Child)
+   ```
