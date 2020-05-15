@@ -72,3 +72,7 @@
    如果第二个参数有数据[count]，只有当count变化的时候才会触发
    如果有return，相当于componentWillUnmount(用于清除副作用)
    ```
+8. useEffect请求封装
+   ```
+   为什么要加一个自执行函数：在useEffect中直接发起网络请求，会报警告
+   ```
