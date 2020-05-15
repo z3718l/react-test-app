@@ -63,3 +63,12 @@
 
     // 每个input都有一个onChange事件，这样就不用重复的写onChange了
    ```
+7. useEffect优化
+   ```
+   需求：只有count发生变化 才触发useEffect函数
+   useEffect的第二个参数：
+   如果第二个参数没有，相当于componentDidMount、componentDidUpdate
+   如果第二个参数是空数组[]，相当于componentDidMount
+   如果第二个参数有数据[count]，只有当count变化的时候才会触发
+   如果有return，相当于componentWillUnmount(用于清除副作用)
+   ```
