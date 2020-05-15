@@ -6,6 +6,9 @@ import Demo3token from './Demo3/tokenForm'
 import TodoList from './Demo4/TodoList'
 import Demo5 from './Demo5'
 import Demo6 from './Demo6'
+// import Demo7 from './Demo7'
+import Demo8 from './Demo8'
+import Demo9 from './Demo9'
 
 class App extends React.Component{
     // 渲染函数
@@ -21,7 +24,8 @@ class App extends React.Component{
                 {/* <Demo3token/> */}
                 {/* <TodoList/> */}
                 {/* <Demo5/> */}
-                <Demo6/>
+                {/* <Demo6/> */}
+                {/* <Demo9/> */}
             </div>
         )
     }

@@ -5,10 +5,10 @@
 
 import React, { useState, useEffect } from 'React'
 const Demo7 = () => {
-    const [page, setPage] = useState(1)
-    useEffect(() => {
-        // 发起请求，拼接page
-    }, [page])
+    // const [page, setPage] = useState(1)
+    // useEffect(() => {
+    //     // 发起请求，拼接page
+    // }, [page])
 
     return (
         <div>
@@ -16,3 +16,4 @@ const Demo7 = () => {
         </div>
     )
 }
+export default Demo7
