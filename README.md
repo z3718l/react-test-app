@@ -302,3 +302,7 @@ react-redux: 为了在react中容易的使用
       import { composeWithDevTools } from 'redux-devtools-extension'
       const store = createStore(rootReducer, {}, composeWithDevTools(applyMiddleware(logger,thunk)))
       ```
+30. redux-action
+    ```
+    合并action
+    ```
