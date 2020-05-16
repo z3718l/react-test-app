@@ -11,6 +11,7 @@ import Demo8 from './Demo8'
 import Demo9 from './Demo9'
 import Demo10 from './Demo10/MemoDemo'
 import Demo11 from './Demo11'
+import Demo12 from './Demo12'
 
 class App extends React.Component{
     // 渲染函数
@@ -29,7 +30,8 @@ class App extends React.Component{
                 {/* <Demo6/> */}
                 {/* <Demo9/> */}
                 {/* <Demo10/> */}
-                <Demo11/>
+                {/* <Demo11/> */}
+                <Demo12/>
             </div>
         )
     }
