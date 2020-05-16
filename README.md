@@ -80,3 +80,7 @@
    ```
    export default React.memo(Child)
    ```
+10. useCallback
+    ```
+    使用场景：根据第二个参数的变化，决定是不是要执行第一个参数的函数
+    ```
