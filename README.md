@@ -87,3 +87,24 @@
 11. useReducer
     ```
     ```
+12. useContext
+    ```
+    类似公共函数，但和全局组件又有区别，尽量少用，组件之间的传值最好还是用props 事件 路由 redux
+    ```
+13. contentType
+14. setState
+    ```
+    setState是异步操作
+    this.setState((prevState, props) => ({
+        count: prevState.count + 1
+    }))
+    复制多次，执行多次，数据就会累加
+
+    this.setState({
+        count: this.state.count + 1
+    }, () => {
+        // 回调函数
+        console.log(this.state.count)
+    })
+    会合并所有的异步执行，然后异步执行完成之后，才会执行异步回调函数
+    ```
