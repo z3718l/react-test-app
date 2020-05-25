@@ -1,6 +1,7 @@
 import React from 'react'
 import { Prompt } from 'react-router-dom'
 import Hello from '../components/hello'
+import JwtTest from '../components/jwttest'
 export default class Home extends React.Component {
     constructor() {
         super()
@@ -35,6 +36,9 @@ export default class Home extends React.Component {
                     {/* <Hello name={[1,2,3]}/> */}
                     {/* <Hello name={[1,2,3]}/>  */}
                     <Hello {...this.state.obj}/> 
+                </div>
+                <div>
+                    <JwtTest/>
                 </div>
             </div>
         )
