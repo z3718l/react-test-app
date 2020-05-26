@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaGFoYTIiLCJiaXJ0aGRheSI6IjE5OTItMTItMTMiLCJpYXQiOjE1OTA0MTQ0MDl9.165fVncv30FnuZCdsN0PQBUnKQRltDPm4xAcOLpeBPs'
+        var user = decodeURIComponent(escape(window.atob(token.split('.')[1])))
+        var resname = JSON.parse(user).name
+        var resbirthday = JSON.parse(user).birthday
+        console.log(resname)
+        console.log(resbirthday)
+    </script>
+</body>
+</html>

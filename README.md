@@ -201,7 +201,9 @@ cnpm install save copy-to-clipboard
 ### 手动解析token
 ```
 const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJuYW1lIjoiaGFoYTIiLCJiaXJ0aGRheSI6IjE5OTItMTItMTMiLCJpYXQiOjE1OTA0MTQ0MDl9.165fVncv30FnuZCdsN0PQBUnKQRltDPm4xAcOLpeBPs'
-let user = decodeURIComponent(escape(window.atob(msg.split('.')[1])))      // 将JWT切割   获取需要的载荷
-let res = JSON.parse(user).name     //将获取的字符串转换成JSON对象
-let res = JSON.parse(user).birthday    //获取需要的数据
+let user = decodeURIComponent(escape(window.atob(token.split('.')[1])))      // 将JWT切割   获取需要的载荷
+let resname = JSON.parse(user).name     //将获取的字符串转换成JSON对象
+let resbirthday = JSON.parse(user).birthday    //获取需要的数据
+console.log(resname)
+console.log(resbirthday)
 ```
