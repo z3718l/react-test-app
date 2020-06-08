@@ -1,6 +1,7 @@
 import React from 'react'
 import Child from './child'
 import Child1 from './child1'
+import Child2 from './child2'
 
 /**
  * 定时器
@@ -47,9 +48,10 @@ export default class Parent extends React.Component {
         console.log('parent render->')
         return (
             <div>
-                parent: { this.state.count }
-                <Child num={ 1 }/>
-                <Child1 num={ this.state.count }/>
+                parent: { 1 }
+                {/* <Child num={ 1 }/>
+                <Child1 num={ 1 }/> */}
+                <Child2 num={ 1 }/>
             </div>
         )
     }
