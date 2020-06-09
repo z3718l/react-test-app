@@ -28,6 +28,7 @@ import UCenter from './pages/UCenter.jsx'
 import MineDemo from './pages/MineDemo.jsx'
 // import MineDem from './pages/MineDem.jsx'
 import CopyBoard from './copyBoard'
+import ReactSvg from './pages/ReactSvg'
 class App extends React.Component{
     constructor() {
         super()
@@ -72,6 +73,7 @@ class App extends React.Component{
                         <li><NavLink to="/home">Home</NavLink></li>
                         <li><NavLink to="/mine">Mine</NavLink></li>
                         <li><NavLink to="/minedemo">MineDemo</NavLink></li>
+                        <li><NavLink to="/svg">ReactSvg</NavLink></li>
                         {/* <li><NavLink to="/minedemo2">MineDemo2</NavLink></li> */}
                     </ul>
                     <Switch>
@@ -85,6 +87,7 @@ class App extends React.Component{
                         <Route exact strict path="/demo2" render = { (props) => <Demo2 { ...props } name="zhangsan"/> }></Route>
                         <Route exact strict path="/ucenter/:id?" component={UCenter}/>
                         <Route exact strict path="/minedemo" component = { MineDemo }/>
+                        <Route exact strict path="/svg" component = { ReactSvg }/>
                         {/* 访问hellomine的时候，重定向到mine页面 */}
                         {/* 还可以用于用户访问权限，如果没有访问权限，直接调转到首页，如果有访问权限，就显示当前页 */}
                         <Redirect from='/hellomine' to='/mine' /> 
