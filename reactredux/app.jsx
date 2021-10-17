@@ -1,5 +1,5 @@
 import React from 'react';
-// import store from './store';
+import store from './store';
 // import { createIncrement, createAsyncIncrement } from './store/countAction';
 import Count from './components/Count'
 
@@ -28,7 +28,7 @@ class App extends React.Component{
         return (
             <div>
                 <h1>hello word</h1>
-                <Count />
+                <Count store={store}/>
                 {/* <div>{store.getState()}</div>
                 <button onClick={this.add}>点击+1</button>
                 <button onClick={this.asyncAdd}>异步点击+1</button> */}
